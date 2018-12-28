@@ -1,7 +1,7 @@
 
 #12306账号
-myuser="xxx@qq.com"
-mypasswd="password"   # 改为自己的账号密码
+myuser="642670121@qq.com"
+mypasswd="weilai123"   # 改为自己的账号密码
 import urllib.request
 import re
 import ssl
@@ -15,20 +15,20 @@ ssl._create_default_https_context = ssl._create_unverified_context
 #常用三字码与站点对应关系
 areatocode={"上海":"SHH","北京":"BJP","南京":"NJH","昆山":"KSH","杭州":"HZH","桂林":"GLZ",'武汉':'WHN','岳阳':'YYQ','深圳北':'IOQ'}
 start1=input("请输入起始站:")
-#start1="北京"
+# start1="北京"
 start=areatocode[start1]
 to1=input("请输入到站:")
-#to1="上海"
+# to1="上海"
 to=areatocode[to1]
 isstudent=input("是学生吗？是：1，不是：0")
-#isstudent="0"
+# isstudent="0"
 date=input("请输入要查询的乘车开始日期的年月，如2017-03-05：")
-#date="2018-04-13"
+# date="2018-12-27"
 if(isstudent=="0"):
     student="ADULT"
 else:
     student="0X00"
-url="https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date="+date+"&\
+url="https://kyfw.12306.cn/otn/leftTicket/queryX?leftTicketDTO.train_date="+date+"&\
 leftTicketDTO.from_station="+start+"&leftTicketDTO.to_station="+to+"&purpose_codes="+student
 context = ssl._create_unverified_context()
 data=urllib.request.urlopen(url).read().decode("utf-8","ignore")
@@ -66,7 +66,7 @@ for i in range(0,len(allcheci)):
     except Exception as err:
         pass
 isdo=input("查票完成，请输入1继续…")
-#isdo=1
+# isdo=1
 if(isdo==1 or isdo=="1"):
     pass
 else:
@@ -177,8 +177,8 @@ req3.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/5
 e Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0')
 req3data=urllib.request.urlopen(req3).read().decode("utf-8","ignore")
 print("登陆完成")
-#isdo="1"
-isdo=input("如果需要订票，请输入1继续，否则请输入其他数据")
+isdo="1"
+# isdo=input("如果需要订票，请输入1继续，否则请输入其他数据")
 if(isdo==1 or isdo=="1"):
     pass
 else:
@@ -196,7 +196,7 @@ while True:
 6 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0')
         initdata=urllib.request.urlopen(reqinit).read().decode("utf-8","ignore")
         #再爬对应订票信息
-        bookurl="https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date="+date+"&leftTi\
+        bookurl="https://kyfw.12306.cn/otn/leftTicket/queryX?leftTicketDTO.train_date="+date+"&leftTi\
 cketDTO.from_station="+start+"&leftTicketDTO.to_station="+to+"&purpose_codes="+student
         req4 = urllib.request.Request(bookurl)
         req4.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHT\
@@ -369,7 +369,7 @@ ML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0')
         "oldPassengerStr":str(nameall[thisno])+",1,"+str(idall[thisno])+",1_",
         "tour_flag":"dc",
         "randCode":"",
-        "whatsSelect":1,
+        "whatsSelect":0,
         "_json_att":"",
         "REPEAT_SUBMIT_TOKEN":token,
         }).encode('utf-8')

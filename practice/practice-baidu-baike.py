@@ -13,7 +13,7 @@ for i in range(1000):
     # dealing with Chinese symbols
     url = base_url + his[-1]
 
-    html = urlopen(url).read().decode('utf-8')
+    html = urlopen(url).read().decode('utf-8')  # 对结果进行编码
     soup = BeautifulSoup(html, features='lxml')
 
     print(i, soup.find('h1').get_text(), '    url: ', url)
