@@ -14,21 +14,21 @@ ssl._create_default_https_context = ssl._create_unverified_context
 #查票
 #常用三字码与站点对应关系
 areatocode={"上海":"SHH","北京":"BJP","南京":"NJH","昆山":"KSH","杭州":"HZH","桂林":"GLZ",'武汉':'WHN','岳阳':'YYQ','深圳北':'IOQ'}
-start1=input("请输入起始站:")
-# start1="北京"
+# start1=input("请输入起始站:")
+start1="深圳北"
 start=areatocode[start1]
-to1=input("请输入到站:")
-# to1="上海"
+# to1=input("请输入到站:")
+to1="岳阳"
 to=areatocode[to1]
-isstudent=input("是学生吗？是：1，不是：0")
-# isstudent="0"
-date=input("请输入要查询的乘车开始日期的年月，如2017-03-05：")
-# date="2018-12-27"
+# isstudent=input("是学生吗？是：1，不是：0")
+isstudent="0"
+# date=input("请输入要查询的乘车开始日期的年月，如2017-03-05：")
+date="2019-01-26"
 if(isstudent=="0"):
     student="ADULT"
 else:
     student="0X00"
-url="https://kyfw.12306.cn/otn/leftTicket/queryX?leftTicketDTO.train_date="+date+"&\
+url="https://kyfw.12306.cn/otn/leftTicket/queryZ?leftTicketDTO.train_date="+date+"&\
 leftTicketDTO.from_station="+start+"&leftTicketDTO.to_station="+to+"&purpose_codes="+student
 context = ssl._create_unverified_context()
 data=urllib.request.urlopen(url).read().decode("utf-8","ignore")
@@ -196,7 +196,7 @@ while True:
 6 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0')
         initdata=urllib.request.urlopen(reqinit).read().decode("utf-8","ignore")
         #再爬对应订票信息
-        bookurl="https://kyfw.12306.cn/otn/leftTicket/queryX?leftTicketDTO.train_date="+date+"&leftTi\
+        bookurl="https://kyfw.12306.cn/otn/leftTicket/queryZ?leftTicketDTO.train_date="+date+"&leftTi\
 cketDTO.from_station="+start+"&leftTicketDTO.to_station="+to+"&purpose_codes="+student
         req4 = urllib.request.Request(bookurl)
         req4.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHT\

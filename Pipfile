@@ -4,6 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+mysqlclient = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 pylint = "*"
