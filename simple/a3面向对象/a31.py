@@ -15,9 +15,9 @@ class Student():
     age = 0   
     #行为 与  特征   
          
-    def __init__(self,age,name):        #构造函数(实例化后，会自动调用)
+    def __init__(self,name,age):        #构造函数(实例化后，会自动调用)
         #初始化对象属性
-        self.neme = name 
+        self.name = name 
         self.age = age        #定义实例变量，实例变量只和对象相关 self.
 
     #     print('student')     
@@ -27,7 +27,7 @@ class Student():
         print('name:'+ self.name)
         print('age:'+ str(self.age))
 
-student = Student()  #类的实例化
+student = Student('weilai',19)  #类的实例化
 student.print_files()  #类下面方法的调用
 #  建议 类的实例化以及类下面方法的调用 与类的定义放在不同的模块。
   

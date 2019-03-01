@@ -1,28 +1,28 @@
-#装饰器
+# 装饰器
 
-#对修改是封闭的，对扩展是开放的
-# import time
+# 对修改是封闭的，对扩展是开放的
+import time
 
-# def a():
-#     print('This is a function') 
+def a():
+    print('This is a function') 
 
-# def b():
-#     print('Hello world') 
+def b():
+    print('Hello world') 
 
-# def print_current_time(abc):
-#     print(time.time())
-#     abc()
+def print_current_time(abc):
+    print(time.time())
+    abc()
 
-# print_current_time(a)
-# print_current_time(b)
-# # 相当于
-# '''
-# print(time.time())
-# a()
-# print(time.time())
-# b()
-# '''
-#更改了内部实现，不够优雅
+print_current_time(a)
+print_current_time(b)
+# 相当于
+'''
+print(time.time())
+a()
+print(time.time())
+b()
+'''
+# 更改了内部实现，不够优雅
 
 # 装饰器
 # import time
@@ -86,15 +86,15 @@ def decorator(func):
         func(*args,**kw)
     return wrapper
 
-# @decorator   #@装饰器名字
-# def f1(func_name):
-#     print('This is a function' + func_name) 
+@decorator   #@装饰器名字
+def f1(func_name):
+    print('This is a function' + func_name) 
 
-# @decorator
-# def f2(func_name1,func_name2,func_name3):
-#     print('hello world' + func_name1) 
-#     print('hello world' + func_name2) 
-#     print('hello world' + func_name3) 
+@decorator
+def f2(func_name1,func_name2,func_name3):
+    print('hello world' + func_name1) 
+    print('hello world' + func_name2) 
+    print('hello world' + func_name3) 
 
 @decorator
 def f3(func_name1,func_name2,**kw):
@@ -103,8 +103,8 @@ def f3(func_name1,func_name2,**kw):
     print(kw)
 
 
-# f1('tset func')   
-# f2('tset func1','tset func2','tset func3')
+f1('tset func')   
+f2('tset func1','tset func2','tset func3')
 f3('tset func1','tset func2',a = 1,b = 2,c = '123')
 
 #装饰器也可以用来控制访问

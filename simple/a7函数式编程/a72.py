@@ -7,9 +7,9 @@
 #if else 
 #for
 
-#计算1+2+2+...+100
+#计算1+2+3+...+100
 from functools import reduce
-a = range(0,100)
+a = range(0,101)
 r = reduce(lambda x,y:x+y,a,50)
 print(r) 
 

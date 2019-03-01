@@ -7,12 +7,12 @@ class VIP(Enum):       #所有枚举类都是Enum的子类
     RED =  'str'
     BLACK = 4
     PINK = 1     # 其实就是YELLOW = 1， 可以看作YELLOW 的别名，
-    #YELLOW = 1  #会报错，不能同时有两个YELLOW Attempted to reuse key: 'YELLOW'
-  #  GREEN = 6  #会报错，不能继续使用GREEN这个标签 Attempted to reuse key: 'GREEN'
+    # YELLOW = 1  #会报错，不能同时有两个YELLOW Attempted to reuse key: 'YELLOW'
+    # GREEN = 6  #会报错，不能继续使用GREEN这个标签 Attempted to reuse key: 'GREEN'
 
-#class Common():
-  #  YELLOW = 1       
-#VIP.YELLOW =6         #会报错，枚举中的值不能被更改
+# class Common():
+#    YELLOW = 1       
+# VIP.YELLOW =6         #会报错，枚举中的值不能被更改
 print(VIP.PINK)
 print(VIP.YELLOW)    #VIP.YELLOW   (不关心取值)
 print(VIP.PINK)      #VIP.YELLOW   可以看作YELLOW 的别名
@@ -74,10 +74,10 @@ BLACK
 PINK
 '''
 
-a = 1
-a = VIP(a)         #把a变成一个枚举类型
-print(a)   #VIP.YELLOW     
 
+a = VIP(1)         #把a变成一个枚举类型
+print(a)   #VIP.YELLOW     
+print('_'*50)
 
 from enum import IntEnum #(枚举的值得是int类型)
 from enum import IntEnum,unique #(枚举的值得是int类型,且不能重复)
