@@ -115,7 +115,7 @@ class Studentb():
         self.name = name            
         self.age = age
         print(self.__class__.sum)   
-        print(Student.sum)
+        print(Studentb.sum)
         self.__class__.sum +=1      #实例方法访问类变量中的sum
         print(Studentb.sum)
 student1 = Studentb('wang',18)
