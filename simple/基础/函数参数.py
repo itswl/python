@@ -1,15 +1,15 @@
 def print_student_files(name, gender,age,adress):
     print("I'm "+name)
-    print("I'm "+age+'years old')
-    print("I'm "+ gender)
+    print("I'm "+age+' years old')
+    print("I'm a "+ gender)
     print("I'm living in "+adress)
 
 print_student_files('weilai','man','18','hubei')
 
 def print_student_files1(name, gender='man',age=18,adress='hubei'):
     print("I'm "+name)
-    print("I'm "+str(age)+ 'years old')
-    print("I'm "+gender)
+    print("I'm "+str(age)+ ' years old')
+    print("I'm a "+gender)
     print("I'm living in "+adress)
 
 print_student_files1('weilai','woman',18,'hubei')
