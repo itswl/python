@@ -9,9 +9,9 @@ import os
   
 author = 'weilai'
 
-hostname='8.7.168.69'  
+hostname='0.0.0.0'  
 username='root'  
-password='Changeme_1234'  
+password='password'  
 port=22  
   
 def upload(local_dir,remote_dir):  
