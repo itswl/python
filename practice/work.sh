@@ -10,7 +10,7 @@ rm -rf /home/omm
 rm -rf /home/oms
 rm -rf /home/ommdba
 rm -rf /opt/SwiftInstall/SwiftDeploy/
-unzip /opt/SwiftInstall/SwiftDeploy/binSwiftDeploy-2.2.13_SLES_x86_64.zip /opt/SwiftInstall/
+unzip /opt/SwiftInstall/SwiftDeploy/binSwiftDeploy-2.2.13_SLES_x86_64.zip -d/opt/SwiftInstall/
 cd /opt/SwiftInstall/SwiftDeploy/bin
 bash /opt/SwiftInstall/SwiftDeploy/bin/start.sh stop
 bash /opt/SwiftInstall/SwiftDeploy/bin/start.sh start -ip 0.0.0.0
