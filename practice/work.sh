@@ -10,21 +10,18 @@ rm -rf /home/omm
 rm -rf /home/oms
 rm -rf /home/ommdba
 rm -rf /opt/SwiftInstall/SwiftDeploy/
-cd /opt/SwiftInstall/
-unzip SwiftDeploy-2.2.13_SLES_x86_64.zip
+unzip /opt/SwiftInstall/SwiftDeploy/binSwiftDeploy-2.2.13_SLES_x86_64.zip /opt/SwiftInstall/
 cd /opt/SwiftInstall/SwiftDeploy/bin
-bash start.sh stop
-bash start.sh start -ip 0.0.0.0
-bash start.sh stop
-cd /opt/SwiftInstall
+bash /opt/SwiftInstall/SwiftDeploy/bin/start.sh stop
+bash /opt/SwiftInstall/SwiftDeploy/bin/start.sh start -ip 0.0.0.0
+bash /opt/SwiftInstall/SwiftDeploy/bin/start.sh stop
 cp /opt/SwiftInstall/FI_zip/* /opt/SwiftInstall/SwiftDeploy/package/
 chown swiftuser:swiftgroup /opt/SwiftInstall/SwiftDeploy/package/*
 cp /opt/SwiftInstall/FI_SPC206/* /opt/SwiftInstall/SwiftDeploy/FIPatch/
 chown swiftuser:swiftgroup  /opt/SwiftInstall/SwiftDeploy/FIPatch/*
 cp /opt/SwiftInstall/SwiftDeploy/etc/templates/FI/*.json /opt/SwiftInstall/SwiftDeploy/etc/datamodel/
 chown swiftuser:swiftgroup /opt/SwiftInstall/SwiftDeploy/etc/datamodel/*
-cd /opt/SwiftInstall/SwiftDeploy/etc/datamodel/
-vi FI_u2000.json
+vi /opt/SwiftInstall/SwiftDeploy/etc/datamodel/FI_u2000.json
 python /opt/SwiftInstall/SwiftDeploy/bin/encrypt_root_key.pyc
 vi /opt/SwiftInstall/SwiftDeploy/silentdeploy/deployparameter.json
 bash /opt/SwiftInstall/SwiftDeploy/bin/silentdeploy.sh admin *******
