@@ -11,7 +11,6 @@ rm -rf /home/oms
 rm -rf /home/ommdba
 rm -rf /opt/SwiftInstall/SwiftDeploy/
 unzip /opt/SwiftInstall/SwiftDeploy/binSwiftDeploy-2.2.13_SLES_x86_64.zip -d/opt/SwiftInstall/
-cd /opt/SwiftInstall/SwiftDeploy/bin
 bash /opt/SwiftInstall/SwiftDeploy/bin/start.sh stop
 bash /opt/SwiftInstall/SwiftDeploy/bin/start.sh start -ip 0.0.0.0
 bash /opt/SwiftInstall/SwiftDeploy/bin/start.sh stop
@@ -24,4 +23,5 @@ chown swiftuser:swiftgroup /opt/SwiftInstall/SwiftDeploy/etc/datamodel/*
 vi /opt/SwiftInstall/SwiftDeploy/etc/datamodel/FI_u2000.json
 python /opt/SwiftInstall/SwiftDeploy/bin/encrypt_root_key.pyc
 vi /opt/SwiftInstall/SwiftDeploy/silentdeploy/deployparameter.json
+vi /etc/pam.d/common-password
 bash /opt/SwiftInstall/SwiftDeploy/bin/silentdeploy.sh admin *******
