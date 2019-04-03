@@ -1,0 +1,17 @@
+from os import path
+from os import listdir
+import os
+
+hostname='8.7.168.69'  
+username='root'  
+password='Changeme_1234'  
+port=22  
+
+path=r"C:\Users\wwx705334\Desktop\work\FI7"
+for root,dirs,files in os.walk(path):
+	for f in files:
+		if os.path.splitext(f)[1]== '.py':
+			os.chdir(root)
+			os.system(f)
+      
+      
