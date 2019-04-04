@@ -1,19 +1,14 @@
 # 利用paramiko模块，安装方法为 pip install paramiko
 # 将windows某文件夹下的文件上传到linux某文件夹中
 # windows 文件夹地址为local_dir
-# linux 文件夹地址为remote_dir 
+# linux 文件夹地址为remote_dir
 
 import paramiko    
 import datetime    
-import os  
-  
-author = 'weilai'
+import os
+from host import *
+import sys
 
-hostname='0.0.0.0'  
-username='root'  
-password='password'  
-port=22  
-  
 def upload(local_dir,remote_dir):  
     try:  
         t=paramiko.Transport((hostname,port))  
@@ -51,9 +46,9 @@ def upload(local_dir,remote_dir):
         print('77,upload file success %s ' % datetime.datetime.now())  
         t.close()  
     except Exception as e:  
-        print(88,e)  
-          
+        print(88,e)
+
 if __name__=='__main__':  
-     local_dir=r'C:\Users\wwx705334\Desktop\fi'  
-     remote_dir='/opt/SwiftInstall/SwiftDeploy/Euler_package/'  
-     upload(local_dir,remote_dir)  
+     local_dir=os.getcwd()+r'\FI'  
+     remote_dir='/opt/SwiftInstall/SwiftDeploy/package'  
+     upload(local_dir,remote_dir)
